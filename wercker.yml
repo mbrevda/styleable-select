@@ -12,7 +12,7 @@ deploy:
     steps:
         - add-ssh-key:
             keyname: DEPLOY_KEY
-        - leipert/git-push
+        - leipert/git-push:
             token: $DEPLOY_KEY
             host: github.com
             gh_pages: true
