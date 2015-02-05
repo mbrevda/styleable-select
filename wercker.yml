@@ -1,0 +1,14 @@
+box: wercker/nodejs
+build:
+    steps:
+        - npm-install
+        - script:
+            name: install gulp
+            code: ln -s node_modules/gulp/bin/gulp.js gulp
+        - script:
+            name: build test
+            code: node tests/test.js
+deploy:
+    steps:
+        - lukevivier/gh-pages
+

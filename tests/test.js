@@ -7,7 +7,7 @@ var Browserify = require('browserify'),
         src: [__dirname + '/../src'],
         testScript: __dirname + '/script.js',
         template: __dirname + '/template.html',
-        output: __dirname + '/../testIndex.html'
+        output: __dirname + '/../index.html'
     }
 
 
