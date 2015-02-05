@@ -16,4 +16,5 @@ deploy:
             token: $DEPLOY_KEY
             host: github.com
             gh_pages: true
+            basedir: testOutput
 

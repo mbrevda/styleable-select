@@ -1,5 +1,6 @@
 var Browserify = require('browserify'),
     fs = require('fs'),
+    path = require('path'),
     Backbone = require('backbone'),
     jQuery = require('jquery')(require('jsdom').jsdom().parentWindow),
     _ = require('underscore'),
@@ -7,7 +8,7 @@ var Browserify = require('browserify'),
         src: [__dirname + '/../src'],
         testScript: __dirname + '/script.js',
         template: __dirname + '/template.html',
-        output: __dirname + '/../index.html'
+        output: __dirname + '/../testOutput/index.html'
     }
 
 
@@ -17,6 +18,7 @@ buildScript(opts.view, opts.testScript, function(script) {
 
 
     var html = _.template(template)({script: script, style: style})
+    fs.mkdirSync(path.dirname(opts.output))
     fs.writeFile(opts.output, html, {flag: 'w+'}, function(err){
         if (err) throw err
 
