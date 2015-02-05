@@ -10,5 +10,10 @@ build:
             code: node tests/test.js
 deploy:
     steps:
-        - lukevivier/gh-pages
+        - add-ssh-key:
+            keyname: DEPLOY_KEY
+        - leipert/git-push
+            token: $DEPLOY_KEY
+            host: github.com
+            gh_pages: true
 
