@@ -1,1 +1,1 @@
-module.exports = require('src/view.js')
+module.exports = require(__dirname + '/src/view.js')
