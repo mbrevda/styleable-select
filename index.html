@@ -12247,8 +12247,8 @@ module.exports = Backbone.View.extend({
         tagName: 'div',
         class: 'styled-select-button'
     },
-    select: $('<select class="styled-select"></select>'),
     initialize: function() {
+        this.select = $('<select class="styled-select"></select>')
         this.render()
     },
     render: function() {
